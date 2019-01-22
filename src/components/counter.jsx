@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0
+        count: 0,
+        items: ["handbag", "shoes"]
     };
 
     styles = {
@@ -12,10 +13,11 @@ class Counter extends Component {
     render() { 
 
        return (
-        <React.Fragment>
+        <div>
            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
            <button className="btm btn-secondary btn-sm">+</button>
-        </React.Fragment>
+           <ul>{this.state.items.map(item => <li>{ item }</li>)}</ul>
+        </div>
        );
     }
 
