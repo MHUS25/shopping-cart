@@ -33,10 +33,8 @@ class Counter extends Component {
     }
 
     renderItems() {
-        if (this.state.items.length === 0) return <p>Basket is empty</p>;
-        
+        if (this.state.items.length === 0) return <p>Basket is empty</p>;  
         return <ul>{this.state.items.map(item => <li key={item}>{ item }</li>)}</ul>;
-
     }
 }
  
