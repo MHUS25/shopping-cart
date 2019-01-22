@@ -17,10 +17,14 @@ class Counter extends Component {
 
        return (
         <React.Fragment>
-           <span style={this.styles} className={classes}>{this.state.count}</span>
+           <span style={this.styles} className={classes}>{this.formatCount()}</span>
            <button className="btm btn-secondary btn-sm">+</button>
         </React.Fragment>
        );
+    }
+
+    formatCount() {
+        return (this.state.count === 0 ? "Zero" : this.state.count);
     }
 }
  
