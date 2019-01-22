@@ -16,7 +16,7 @@ class Counter extends Component {
         <div>
            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
            <button className="btm btn-secondary btn-sm">+</button>
-           <ul>{this.state.items.map(item => <li key={item}>{ item }</li>)}</ul>
+           { this.renderItems() }
         </div>
        );
     }
@@ -30,6 +30,13 @@ class Counter extends Component {
     formatCount() {
         const {count} = this.state
         return (count === 0 ? "Zero" : count);
+    }
+
+    renderItems() {
+        if (this.state.items.length === 0) return <p>Basket is empty</p>;
+        
+        return <ul>{this.state.items.map(item => <li key={item}>{ item }</li>)}</ul>;
+
     }
 }
  
