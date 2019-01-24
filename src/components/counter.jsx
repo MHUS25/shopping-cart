@@ -10,8 +10,14 @@ class Counter extends Component {
         fontSize: 30
     };
 
-    handleIncrement() {
+
+    constructor() {
+        super();
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
     
+    handleIncrement() {
+        console.log(this);
     }
 
     render() { 
