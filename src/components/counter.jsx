@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state = {
         count: 0,
-        items: ["handbag", "shoes"]
+        items: []
     };
 
     styles = {
@@ -15,10 +15,10 @@ class Counter extends Component {
         this.setState({ count: this.state.count + 1 })
     }
 
-    render() { 
+    render() {
 
        return (
-           
+
         <div>
            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
            <button onClick={ () => this.handleIncrement(item) } className="btm btn-secondary btn-sm">+</button>
@@ -39,9 +39,9 @@ class Counter extends Component {
     }
 
     renderItems() {
-        if (this.state.items.length === 0) return <p>Basket is empty</p>;  
+        if (this.state.items.length === 0) return <p>Basket is empty</p>;
         return <ul>{this.state.items.map(item => <li key={item}>{ item }</li>)}</ul>;
     }
 }
- 
+
 export default Counter;
