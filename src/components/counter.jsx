@@ -2,27 +2,24 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count: 0,
-        items: []
+        count: this.props.value
     };
 
     styles = {
         fontSize: 30
     };
 
-    handleIncrement = item => {
-        console.log(item);
+    handleIncrement = () => {
         this.setState({ count: this.state.count + 1 })
     }
 
     render() {
-
+      console.log("props", this.props)
        return (
 
         <div>
            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-           <button onClick={ () => this.handleIncrement(item) } className="btm btn-secondary btn-sm">+</button>
-           { this.renderItems() }
+           <button onClick={ () => this.handleIncrement() } className="btm btn-secondary btn-sm">+</button>
         </div>
        );
     }
@@ -38,10 +35,6 @@ class Counter extends Component {
         return (count === 0 ? "Zero" : count);
     }
 
-    renderItems() {
-        if (this.state.items.length === 0) return <p>Basket is empty</p>;
-        return <ul>{this.state.items.map(item => <li key={item}>{ item }</li>)}</ul>;
-    }
 }
 
 export default Counter;
