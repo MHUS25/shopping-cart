@@ -10,7 +10,7 @@ class Counter extends Component {
     };
 
     handleIncrement = () => {
-        this.setState({ count: this.state.value + 1 })
+        this.setState({ value: this.state.value + 1 })
     }
 
     render() {
