@@ -6,8 +6,12 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      <div>
       <Navbar />
-
+      <main className="container">
+      <Counters />
+      </main>
+      </div>
     );
   }
 }
