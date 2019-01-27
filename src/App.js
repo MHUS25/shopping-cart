@@ -4,7 +4,7 @@ import Counters from './components/counters';
 import './App.css';
 
 class App extends Component {
-  
+
   state = {
     counters: [
         { id: 1, value: 2 },
@@ -40,7 +40,12 @@ class App extends Component {
       <div>
       <Navbar />
       <main className="container">
-      <Counters />
+      <Counters
+      counters={this.state.counters}
+      onReset={this.handleReset}
+      onIncrement={this.handleIncrement}
+      onDelete={this.handleDelete}
+      />
       </main>
       </div>
     );
