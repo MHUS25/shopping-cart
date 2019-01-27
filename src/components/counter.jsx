@@ -6,7 +6,7 @@ class Counter extends Component {
     };
 
     styles = {
-        fontSize: 30
+        fontSize: 20
     };
 
     handleIncrement = () => {
@@ -15,8 +15,8 @@ class Counter extends Component {
 
     render() {
        return (
-
         <div>
+          <h4>Item {this.props.id}</h4>
            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
            <button onClick={ () => this.handleIncrement() } className="btm btn-secondary btn-sm">+</button>
         </div>
