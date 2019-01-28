@@ -14,16 +14,6 @@ class App extends Component {
     ]
   };
 
-  constructor() {
-    super();
-    console.log("1. App - Construtor");
-  }
-
-  componentDidMount() {
-    // make api calls here
-    console.log("5. App - Mounted");
-  }
-
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -46,7 +36,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("2. App - Rendered");
     return (
       <div>
       <Navbar

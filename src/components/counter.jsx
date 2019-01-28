@@ -2,22 +2,11 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
-    componentDidUpdate(prevProps, prevState) {
-      console.log("prevProps", prevProps);
-      console.log("prevState", prevState);
-    }
-
-    componentWillUnmount() {
-      console.log("Counter - Unmounted")
-    }
-
     styles = {
         fontSize: 15
     };
 
     render() {
-      console.log("Counter - Rendered")
-
        return (
         <div>
           <h4>Item {this.props.id}</h4>
